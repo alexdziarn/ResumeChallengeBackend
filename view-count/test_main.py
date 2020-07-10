@@ -4,7 +4,7 @@ import json
 
 def test_lambda_handler():
     test_results = json.dumps(lambda_handler())
-    if len(test_results)==0
+    if test_results==0:
         a=1
         assert a==1
     else:
