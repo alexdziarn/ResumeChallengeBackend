@@ -3,7 +3,7 @@ import boto3
 import json
 
 def test_lambda_handler():
-    if "Item"not in boto3.resource('dynamodb').Table('MyWebsiteTable')get_item(Key={'type': 'resume'}):
+    if "Item"not in boto3.resource('dynamodb').Table('MyWebsiteTable').get_item(Key={'type': 'resume'}):
         a=1
         assert a==1
     else
