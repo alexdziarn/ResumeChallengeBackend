@@ -29,6 +29,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_DEFAULT_REGION: us-east-1
   workflow:
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout2
       uses: actions/checkout@v2
