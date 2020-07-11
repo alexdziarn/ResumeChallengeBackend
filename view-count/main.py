@@ -4,7 +4,7 @@ import boto3
 from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
-    client = boto3.resource('dynamodb')
+    client = boto3.resource('dynamodb', region_name='us-east-1')
     table = client.Table('MyWebsiteTable')
     response = table.get_item(Key={'type': 'resume'})
     if "Item"not in response:
