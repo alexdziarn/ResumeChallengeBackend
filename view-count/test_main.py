@@ -5,8 +5,8 @@ import json
 from boto3.dynamodb.conditions import Key
 
 def test_lambda_handler():
-    test = json.loads(lambda_handler({'key1': 'value1', 'key2': 'value2', 'key3': 'value3'},{})['body'])['views']
     client = boto3.resource('dynamodb')
     table = client.Table('MyWebsiteTable')
     response = table.get_item(Key={'type': 'resume'})
-    assert int(response['Item']['views'])==test
+    test = json.loads(lambda_handler({'key1': 'value1', 'key2': 'value2', 'key3': 'value3'},{})['body'])['views']
+    assert int(response['Item']['views'])+1==test
