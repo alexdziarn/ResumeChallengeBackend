@@ -1,7 +1,6 @@
 from main import lambda_handler
 import boto3
 import json
-
 from boto3.dynamodb.conditions import Key
 
 def test_lambda_handler():
